@@ -1,0 +1,13 @@
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\bin\x86\Debug\GmGen.exe.config
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\bin\x86\Debug\GmGen.exe
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\bin\x86\Debug\GmGen.pdb
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\bin\x86\Debug\ClassLibrary1.dll
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\bin\x86\Debug\ClassLibrary1.pdb
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\obj\x86\Debug\GmGen.csproj.AssemblyReference.cache
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\obj\x86\Debug\GmGen.Properties.Resources.resources
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\obj\x86\Debug\GmGen.csproj.GenerateResource.cache
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\obj\x86\Debug\GmGen.csproj.CoreCompileInputs.cache
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\obj\x86\Debug\GmGen.csproj.CopyComplete
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\obj\x86\Debug\GmGen.exe
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\obj\x86\Debug\GmGen.pdb
+C:\Users\yaega\Documents\GitHub\GmGen\GmGen\obj\x86\Debug\GmGen.Form1.resources

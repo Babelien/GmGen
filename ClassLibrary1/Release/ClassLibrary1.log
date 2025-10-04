@@ -1,0 +1,24 @@
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  ClassLibrary1.cpp
+  MidiProcessor.cpp
+C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(227,21): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  (ソース ファイル '/MidiProcessor.cpp' をコンパイルしています)
+  
+C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(304,29): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル '/MidiProcessor.cpp' をコンパイルしています)
+  
+C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(332,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  (ソース ファイル '/MidiProcessor.cpp' をコンパイルしています)
+  
+C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(334,33): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  (ソース ファイル '/MidiProcessor.cpp' をコンパイルしています)
+  
+  MidiProcessorWrapper.cpp
+C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessorWrapper.h(42,31): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  (ソース ファイル '/MidiProcessorWrapper.cpp' をコンパイルしています)
+  
+  コードを生成中...
+  .NETFramework,Version=v4.8.AssemblyAttributes.cpp
+  AssemblyInfo.obj : MSIL モジュールが見つかりました。MSIL ではインクリメンタル リンクは無効化されています。フル リンクを行います
+  ClassLibrary1.vcxproj -> C:\Users\yaega\Documents\GitHub\GmGen\Release\ClassLibrary1.dll
