@@ -44,12 +44,11 @@
             this.dataGridViewTracks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTracks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewTracks.Location = new System.Drawing.Point(0, 30);
-            this.dataGridViewTracks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewTracks.Name = "dataGridViewTracks";
             this.dataGridViewTracks.RowHeadersVisible = false;
             this.dataGridViewTracks.RowHeadersWidth = 51;
             this.dataGridViewTracks.RowTemplate.Height = 24;
-            this.dataGridViewTracks.Size = new System.Drawing.Size(622, 436);
+            this.dataGridViewTracks.Size = new System.Drawing.Size(603, 431);
             this.dataGridViewTracks.TabIndex = 0;
             this.dataGridViewTracks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTracks_CellContentClick);
             // 
@@ -60,8 +59,8 @@
             this.fileMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(622, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(603, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,27 +76,26 @@
             // Import
             // 
             this.Import.Name = "Import";
-            this.Import.Size = new System.Drawing.Size(224, 26);
+            this.Import.Size = new System.Drawing.Size(137, 26);
             this.Import.Text = "Import";
             this.Import.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // Export
             // 
             this.Export.Name = "Export";
-            this.Export.Size = new System.Drawing.Size(224, 26);
+            this.Export.Size = new System.Drawing.Size(137, 26);
             this.Export.Text = "Export";
             this.Export.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 466);
+            this.ClientSize = new System.Drawing.Size(603, 461);
             this.Controls.Add(this.dataGridViewTracks);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Font = new System.Drawing.Font("MS UI Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "GmGen";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTracks)).EndInit();

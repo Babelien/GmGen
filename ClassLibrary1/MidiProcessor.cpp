@@ -31,7 +31,6 @@ int MidiProcessor::importMidi(const char* filePath)
 
 	for (int i = 0; i < trackSize; ++i)
 	{
-		//_tracks[i].hasGmResetSysEx = true;
 		ifs.read(reinterpret_cast<char*>(_tracks[i].MTrk), sizeof(_tracks[i].MTrk));
 		ifs.read(reinterpret_cast<char*>(_tracks[i].dataSize), sizeof(_tracks[i].dataSize));
 
@@ -68,7 +67,6 @@ int MidiProcessor::importMidi(const char* filePath)
 			}
 			else if (event >= 0xC0 && event <= 0xCF) // ‰¹F‘I‘ð
 			{
-				//ifs.read(reinterpret_cast<char*>(&_tracks[i].instrument), sizeof(_tracks[i].instrument));
 				int midiChannel = event - 0xC0;
 				_tracks[i].instrument = midiChannel != 9 ? data[index] : static_cast<unsigned char>(128);
 				index++;

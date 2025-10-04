@@ -18,6 +18,7 @@ namespace GmGen
 
         public Form1()
         {
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             InitializeComponent();
             wrapper = new MidiProcessorWrapper();
 
@@ -35,6 +36,7 @@ namespace GmGen
             trackNameCol.Name = "TrackName";
             trackNameCol.ReadOnly = true;
             trackNameCol.Width = 300;
+            trackNameCol.SortMode = DataGridViewColumnSortMode.NotSortable;
 
             // 楽器列（ComboBox）
             DataGridViewComboBoxColumn instrumentCol = new DataGridViewComboBoxColumn();
