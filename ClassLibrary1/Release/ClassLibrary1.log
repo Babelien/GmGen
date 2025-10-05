@@ -5,13 +5,13 @@
 C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(225,21): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
   (ソース ファイル '/MidiProcessor.cpp' をコンパイルしています)
   
-C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(302,29): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(290,29): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル '/MidiProcessor.cpp' をコンパイルしています)
   
-C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(330,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(318,20): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
   (ソース ファイル '/MidiProcessor.cpp' をコンパイルしています)
   
-C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(332,33): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\yaega\Documents\GitHub\GmGen\ClassLibrary1\MidiProcessor.cpp(320,33): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
   (ソース ファイル '/MidiProcessor.cpp' をコンパイルしています)
   
   MidiProcessorWrapper.cpp

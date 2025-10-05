@@ -132,22 +132,22 @@ int MidiProcessor::exportMidi(const char* filePath, unsigned char instruments[])
 
 			if (event >= 0x80 && event <= 0x8F) // ノートオフ
 			{
-				eventChFix(i, event, 0x80, index, instruments[i - 1]);
+				eventChFix(i, event, 0x80, index, instruments);
 				index += 2;
 			}
 			else if (event >= 0x90 && event <= 0x9F) // ノートオン
 			{
-				eventChFix(i, event, 0x90, index, instruments[i - 1]);
+				eventChFix(i, event, 0x90, index, instruments);
 				index += 2;
 			}
 			else if (event >= 0xA0 && event <= 0xAF)
 			{
-				eventChFix(i, event, 0xA0, index, instruments[i - 1]);
+				eventChFix(i, event, 0xA0, index, instruments);
 				index += 2;
 			}
 			else if (event >= 0xB0 && event <= 0xBF)
 			{
-				eventChFix(i, event, 0xB0, index, instruments[i - 1]);
+				eventChFix(i, event, 0xB0, index, instruments);
 				index += 2;
 			}
 			else if (event >= 0xC0 && event <= 0xCF) // 音色選択
@@ -172,7 +172,7 @@ int MidiProcessor::exportMidi(const char* filePath, unsigned char instruments[])
 			}
 			else if (event >= 0xD0 && event <= 0xDF)
 			{
-				eventChFix(i, event, 0xD0, index, instruments[i - 1]);
+				eventChFix(i, event, 0xD0, index, instruments);
 				index++;
 			}
 			else if (event == 0xFF) // メタイベント
@@ -232,22 +232,10 @@ int MidiProcessor::exportMidi(const char* filePath, unsigned char instruments[])
 	for (int i = 1; i < carrtoi(_header.trackSize, 2); ++i)
 	{
 		unsigned char programChange[] = { static_cast<unsigned char>(0x00), static_cast<unsigned char>(0xC0),instruments[i - 1] };
+		programChange[1] = static_cast<unsigned char>(0xC0 + getChannel(i-1, instruments));
 		if (instruments[i - 1] >= 128)
 		{
 			programChange[2] = static_cast<unsigned char>(0);
-			programChange[1] = static_cast<unsigned char>(0xC9);
-		}
-		else
-		{
-			int ch = i - 1;
-			if (i >= 9)
-			{
-				++ch;
-			}
-
-			ch %= 16;
-
-			programChange[1] = static_cast<unsigned char>(0xC0 + ch);
 		}
 		_tracks[i].data.insert(_tracks[i].data.begin(), programChange[2]);
 		_tracks[i].data.insert(_tracks[i].data.begin(), programChange[1]);
@@ -335,15 +323,43 @@ int MidiProcessor::getDeltaTime(unsigned char data[], int& index)
 	return deltaTime;
 }
 
-void MidiProcessor::eventChFix(int roopCounter, int event, int eventNumOfChOne, int index, unsigned char instrument)
+int MidiProcessor::getChannel(int instTrackNumber, unsigned char instruments[])
 {
-	int correctNum = static_cast<int>(instrument) < 128 ? eventNumOfChOne + roopCounter - 1 : eventNumOfChOne + 9;
-
-	if (event != correctNum)
+	if (instruments[instTrackNumber] >= 128) // ドラムの時
 	{
-		int start = index - 1;
-		_tracks[roopCounter].data.erase(_tracks[roopCounter].data.begin() + start, _tracks[roopCounter].data.begin() + start + 1);
-		_tracks[roopCounter].data.insert(_tracks[roopCounter].data.begin() + start, static_cast<unsigned char>(correctNum));
+		return 9; // チャンネル10を返す
 	}
+
+	int ch = instTrackNumber;
+	for (int i = 0; i <= instTrackNumber; ++i)
+	{
+		if (instruments[i] >= 128) // ドラムトラックがあったら
+		{
+			ch--; // その分トラックを前にずらす
+		}
+	}
+
+	if (ch >= 9)
+	{
+		ch++;
+	}
+
+	if (ch > 15)
+	{
+		ch = 0;
+	}
+
+	return ch;
 }
 
+void MidiProcessor::eventChFix(int trackNum, int event, int eventNumOfChOne, int index, unsigned char instruments[])
+{
+	int correctEvent = eventNumOfChOne + getChannel(trackNum-1, instruments);
+
+	if (event != correctEvent)
+	{
+		int start = index - 1;
+		_tracks[trackNum].data.erase(_tracks[trackNum].data.begin() + start, _tracks[trackNum].data.begin() + start + 1);
+		_tracks[trackNum].data.insert(_tracks[trackNum].data.begin() + start, static_cast<unsigned char>(correctEvent));
+	}
+}

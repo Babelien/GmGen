@@ -48,7 +48,8 @@ public:
 private:
 	int carrtoi(unsigned char arr[], int size);
 	int getDeltaTime(unsigned char data[], int& index);
-	void eventChFix(int roopCounter, int event, int eventNumOfChOne, int index, unsigned char instrument);
+	int getChannel(int instTrackNumber, unsigned char instruments[]);
+	void eventChFix(int roopCounter, int event, int eventNumOfChOne, int index, unsigned char instruments[]);
 
 	Header _header;
 	Track* _tracks;

@@ -18,7 +18,6 @@ namespace GmGen
 
         public Form1()
         {
-            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             InitializeComponent();
             wrapper = new MidiProcessorWrapper();
 
@@ -28,6 +27,7 @@ namespace GmGen
         private void InitializeTrackGrid()
         {
             dataGridViewTracks.AutoGenerateColumns = false;
+            dataGridViewTracks.CurrentCellDirtyStateChanged += DataGridView1_CurrentCellDirtyStateChanged;
             dataGridViewTracks.Columns.Clear();
 
             // トラック名列
@@ -116,6 +116,19 @@ namespace GmGen
                 }
             }
         }
+
+        private void DataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            var dgv = sender as DataGridView;
+
+            // 編集中のセルがあり、かつ変更が未確定なら
+            if (dgv.IsCurrentCellDirty)
+            {
+                // 編集内容を確定させる
+                dgv.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
 
         private string[] gmInstruments = new string[]
         {
